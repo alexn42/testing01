@@ -2,17 +2,18 @@
 
 # THis is my first GIT repo upload from scratch from sb01.montana.local
 
-function STUFF(){
-
+function DO_STUFF()
+{
+    X=${1}
+    dd if=/dev/zero of=file.${i} bs=1M count=${X}
+    return
 }
+
 
 ## MAIN
 
 TMPFILE1="/tmp/tempfile.$(date +%s.%N).1.tmp"
 
 for i in $(seq -w 1 1 100) ; do 
-
-dd if=/dev/zero of=file.${i} bs=1M count=10
-
-
+    DO_STUFF ${i}
 done
