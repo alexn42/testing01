@@ -44,20 +44,20 @@ def main():
                 os.chmod(file_path, new_mode)
                 status = "unset"
 
-            # Output: path\0json
+            # Output: path\0json\0
             output_json = json.dumps({"status": status})
             sys.stdout.buffer.write(file_path.encode('utf-8'))
             sys.stdout.buffer.write(b'\0')
             sys.stdout.buffer.write(output_json.encode('utf-8'))
-            sys.stdout.buffer.write(b'\n')
+            sys.stdout.buffer.write(b'\0')
 
         except Exception as e:
-            # Output error response in same format
+            # Output error response in same format: path\0json\0
             output_json = json.dumps({"status": "error", "error": str(e)})
             sys.stdout.buffer.write(file_path.encode('utf-8'))
             sys.stdout.buffer.write(b'\0')
             sys.stdout.buffer.write(output_json.encode('utf-8'))
-            sys.stdout.buffer.write(b'\n')
+            sys.stdout.buffer.write(b'\0')
 
 
 if __name__ == '__main__':
