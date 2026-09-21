@@ -42,6 +42,10 @@ On Windows, install [ffmpeg](https://ffmpeg.org/download.html),
 and [Tesseract for Windows](https://github.com/UB-Mannheim/tesseract/wiki),
 and put each on `PATH`.
 
+For a step-by-step walkthrough (winget commands, PATH setup, verification,
+troubleshooting) rather than the terse version above, see
+[INSTALL.md](INSTALL.md).
+
 ## Build
 
 ```bash
