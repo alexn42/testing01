@@ -16,6 +16,10 @@ found, and where.
 - **Video**: sampled at a configurable interval (default: 1 frame/second),
   not decoded frame-by-frame, so it stays fast on longer videos.
 
+A Go port with the same CLI and JSON output lives in [`go/`](go/README.md) —
+it compiles to a single dependency-free binary, including a native Windows
+`.exe` via cross-compilation.
+
 ### Install
 
 System dependency (the actual OCR engine; `pytesseract` is just a wrapper
